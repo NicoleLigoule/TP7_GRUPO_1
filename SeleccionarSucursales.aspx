@@ -19,16 +19,11 @@
             height: 45px;
             width: 595px;
         }
-        .auto-style5 {
-            height: 26px;
-            width: 595px;
-        }
         .auto-style6 {
             height: 34px;
         }
-        .auto-style7 {
-            width: 595px;
-            height: 34px;
+        .auto-style8 {
+            height: 33px;
         }
     </style>
 </head>
@@ -75,31 +70,23 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>
-                        <asp:Button ID="btnBsas" runat="server" height="29px" Text="Buenos Aires" width="112px" />
+                    <td rowspan="4">
+                        <asp:DataList ID="dtlProvincias" runat="server">
+                        </asp:DataList>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style3" rowspan="4">
+                        <asp:ListView ID="lvSucursales" runat="server">
+                        </asp:ListView>
+                    </td>
+                    <td class="auto-style8"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">
-                        <asp:Button ID="btnERios" runat="server" height="29px" Text="Entre Rios" width="112px" />
-                    </td>
-                    <td class="auto-style7"></td>
                     <td class="auto-style6"></td>
                 </tr>
                 <tr>
-                    <td>
-                        <asp:Button ID="btnStaFe" runat="server" height="29px" Text="Santa Fe" width="112px" />
-                    </td>
-                    <td class="auto-style3">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Button ID="btnPampa" runat="server" Text="La Pampa" />
-                    </td>
-                    <td class="auto-style5"></td>
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
