@@ -49,6 +49,17 @@
             left: 355px;
             top: 361px;
         }
+        .auto-style15 {
+            width: 271px;
+            height: 23px;
+        }
+        .auto-style16 {
+            width: 721px;
+            height: 23px;
+        }
+        .auto-style17 {
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -59,9 +70,9 @@
                 <tr>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:HyperLink ID="hlListado" runat="server">Listado de sucursales</asp:HyperLink>
+                        <asp:HyperLink ID="hlListado" runat="server" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de sucursales</asp:HyperLink>
                     </td>
-                    <td>&nbsp;<asp:HyperLink ID="hlMostrar" runat="server">Mostrar sucursales seleccionadas</asp:HyperLink>
+                    <td>&nbsp;<asp:HyperLink ID="hlMostrar" runat="server" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar sucursales seleccionadas</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
@@ -79,9 +90,9 @@
                         </td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style15"></td>
+                    <td class="auto-style16"></td>
+                    <td class="auto-style17"></td>
                 </tr>
                 <tr>
                     <td class="auto-style9">&nbsp;</td>
