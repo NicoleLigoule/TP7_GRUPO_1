@@ -92,7 +92,9 @@
                 <tr>
                     <td class="auto-style15"></td>
                     <td class="auto-style16"></td>
-                    <td class="auto-style17"></td>
+                    <td class="auto-style17">
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtBusqueda" ErrorMessage="RegularExpressionValidator" ValidationExpression="^[a-zA-Z]+$">Ingresar el nombre de la sucursal. No un Numero</asp:RegularExpressionValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style9">&nbsp;</td>
@@ -219,7 +221,7 @@
                         <br />
                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [URL_Imagen_Sucursal], [NombreSucursal], [DescripcionSucursal] FROM [Sucursal]"></asp:SqlDataSource>
                     </td>
-                    <td class="auto-style8"></td>
+                    <td class="auto-style8">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6"></td>

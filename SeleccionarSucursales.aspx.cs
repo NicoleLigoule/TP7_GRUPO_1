@@ -11,7 +11,7 @@ namespace TP7_GRUPO_1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
