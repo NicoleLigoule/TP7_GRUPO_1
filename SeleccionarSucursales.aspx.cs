@@ -13,5 +13,10 @@ namespace TP7_GRUPO_1
         {
 
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            txtBusqueda.Text = "";
+        }
     }
 }

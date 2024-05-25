@@ -83,7 +83,7 @@
                 <tr>
                     <td class="auto-style10"></td>
                     <td class="auto-style4">Búsqueda por nombre de sucursal:&nbsp;&nbsp;<asp:TextBox ID="txtBusqueda" runat="server"></asp:TextBox>
-                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                     </td>
                     <td class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;
