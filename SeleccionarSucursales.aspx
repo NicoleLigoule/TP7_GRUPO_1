@@ -234,7 +234,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style9">
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia] FROM [Provincia]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia] , [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td>&nbsp;</td>
