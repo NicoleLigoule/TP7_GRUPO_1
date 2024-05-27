@@ -27,6 +27,56 @@ namespace TP7_GRUPO_1
             
         }
 
+
+        protected void Button1_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "SeleccionarSucursal")
+            {
+                agregarSucursal(e.CommandArgument.ToString());
+            }
+        }
+
+
+        public void agregarSucursal(string ID)
+        {
+            Sucursal sucu = TraerSucursalSegunId(ID);
+            if (Session["tabla"] == null)
+            {
+                Session["tabla"] = tablaSelecion();
+
+            }
+            agregarfil((DataTable)Session["tabla"], sucu);
+        }
+
+        public Sucursal TraerSucursalSegunId(string ID)
+        {
+            string Ruta = "Data Source=localhost\\sqlexpress; Initial Catalog = BDSucursales;Integrated Security=true;";
+            string query = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal] FROM [Sucursal] WHERE [Id_Sucursal] =" + ID;
+
+            Sucursal sucursa = new Sucursal();
+
+            SqlConnection connection = new SqlConnection(Ruta);
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Id_Sucursal", ID);
+
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                int id = (int)reader["Id_Sucursal"];
+                string Nombre = reader["NombreSucursal"].ToString();
+                string Descripcion = reader["DescripcionSucursal"].ToString();
+                sucursa.setId_Sucursal(id);
+                sucursa.setNombreSucursal(Nombre);
+                sucursa.setDescripcionSucursal(Descripcion);
+
+
+            }
+            return sucursa;
+        }
+
         protected DataTable tablaSelecion()
         {
             DataTable tabla = new DataTable();
@@ -46,13 +96,12 @@ namespace TP7_GRUPO_1
             string Descripcion = sucur.GetDescripcionSucursal();
 
             DataRow drow = tabla.NewRow();
-            drow["Id_Sucursal"] = ID.ToString();
-            drow["Nombre"] = Nombre;
-            drow["Descripcion"] = Descripcion;
+            drow["ID_SUCURSAL"] = ID.ToString();
+            drow["NOMBRE"] = Nombre;
+            drow["DESCRIPCION"] = Descripcion;
 
 
             tabla.Rows.Add(drow);
         }
-
     }
 }

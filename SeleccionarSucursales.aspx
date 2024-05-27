@@ -177,7 +177,7 @@
                                     <br />
                                     <br />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:Button ID="Button1" runat="server" Text="Button" />
+                                    <asp:Button ID="Button1" runat="server" Text="Seleccionar" CommandArgument='<%# Eval("Id_Sucursal") %>' CommandName="SeleccionarSucursal" OnCommand="Button1_Command" />
                                     <br />
                                 </td>
                             </ItemTemplate>
@@ -219,7 +219,7 @@
                         </asp:ListView>
                         <br />
                         <br />
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [URL_Imagen_Sucursal], [NombreSucursal], [DescripcionSucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_ProvinciaSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]"></asp:SqlDataSource>
                     </td>
                     <td class="auto-style8">&nbsp;</td>
                 </tr>
