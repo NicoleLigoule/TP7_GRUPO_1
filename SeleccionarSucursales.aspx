@@ -110,7 +110,6 @@
                     <td rowspan="4" class="auto-style9">
                         <asp:DataList ID="dtlProvincias" runat="server" DataSourceID="SqlDataSource1">
                             <ItemTemplate>
-                                <asp:Button ID="btnDescripcionProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' CommandArgument='<%# Eval("Id_Provincia") %>' />
 <br />
                                 <asp:Button ID="btnDescripcionProvincia" 
                                     runat="server" 

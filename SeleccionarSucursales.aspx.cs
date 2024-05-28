@@ -25,12 +25,44 @@ namespace TP7_GRUPO_1
             
         }
 
+        public bool validarNpRepetir(string Id)
+        {
+            int id;
+            int.TryParse(Id, out id);
+            bool numeroRepetido = true;
+
+            if (Session["tabla"] != null && Session["tabla"] is DataTable)
+            {
+                DataTable tabla = (DataTable)Session["tabla"];
+
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    object valorCelda = fila[0];
+                    if (valorCelda != null && valorCelda != DBNull.Value && !string.IsNullOrEmpty(valorCelda.ToString()))
+                    {
+                        int numeroActual;
+                        if (int.TryParse(valorCelda.ToString(), out numeroActual))
+                        {
+                            if (numeroActual == id)
+                            {
+                                numeroRepetido = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return numeroRepetido;
+        }
 
         protected void Button1_Command(object sender, CommandEventArgs e)
         {
             if (e.CommandName == "SeleccionarSucursal")
             {
-                agregarSucursal(e.CommandArgument.ToString());
+                if (validarNpRepetir(e.CommandArgument.ToString()))
+                {
+                    agregarSucursal(e.CommandArgument.ToString());
+                }
             }
         }
 
