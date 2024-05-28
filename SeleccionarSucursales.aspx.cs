@@ -25,9 +25,21 @@ namespace TP7_GRUPO_1
             
         }
 
-        
+        private void FiltrarSucursalesPorProvincia(int idProvincia)
+        {
+            SqlDataSource2.SelectParameters.Clear();
+            SqlDataSource2.SelectParameters.Add("Id_Provincia", idProvincia.ToString());
+            SqlDataSource2.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_ProvinciaSucursal], [URL_Imagen_Sucursal] FROM [Sucursal] WHERE [Id_ProvinciaSucursal] = @Id_Provincia";
+            lvSucursales.DataBind();
+        }
 
-        
-
+        protected void btnProvincias_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "comandoBtnProvincias")
+            {
+                int idProvincia = Convert.ToInt32(e.CommandArgument);
+                FiltrarSucursalesPorProvincia(idProvincia);
+            }
+        }
     }
 }

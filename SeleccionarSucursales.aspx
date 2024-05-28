@@ -110,8 +110,13 @@
                     <td rowspan="4" class="auto-style9">
                         <asp:DataList ID="dtlProvincias" runat="server" DataSourceID="SqlDataSource1">
                             <ItemTemplate>
-                                <asp:Button ID="btnDescripcionProvincia" runat="server" Text='<%# Eval("DescripcionProvincia") %>' />
-<br />
+                                <asp:Button ID="btnDescripcionProvincia" 
+                                    runat="server" 
+                                    Text='<%# Eval("DescripcionProvincia") %>' 
+                                    CommandArgument='<%# Eval("Id_Provincia") %>'
+                                    CommandName="comandoBtnProvincias"
+                                    OnCommand="btnProvincias_Command" />
+                                <br />
                                 <br />
                             </ItemTemplate>
                         </asp:DataList>
@@ -219,7 +224,7 @@
                         </asp:ListView>
                         <br />
                         <br />
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [URL_Imagen_Sucursal], [NombreSucursal], [DescripcionSucursal] FROM [Sucursal]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT DISTINCT [URL_Imagen_Sucursal], [NombreSucursal], [DescripcionSucursal] FROM [Sucursal]"></asp:SqlDataSource>
                     </td>
                     <td class="auto-style8">&nbsp;</td>
                 </tr>
@@ -234,7 +239,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style9">
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT [DescripcionProvincia] FROM [Provincia]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT DISTINCT [DescripcionProvincia], [Id_Provincia] FROM [Provincia]"></asp:SqlDataSource>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td>&nbsp;</td>
